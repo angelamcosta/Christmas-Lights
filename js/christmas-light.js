@@ -7,7 +7,7 @@ function addLights() {
             $('#container').append('<div class="light"> </div>');
         }
     } else {
-        for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
             $('#container').append('<div class="light"> </div>');
         }
     }
@@ -16,48 +16,30 @@ function addLights() {
 function changeAnimation(time) {
     switch (time) {
         case '1':
-            $('.light:nth-child(4n + 1)').css({
-                animation: 'green 1s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 2)').css({
-                animation: 'yellow 1s 0.5s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 3)').css({
-                animation: 'red 1s 1s linear infinite alternate',
-            });
-            $('.light:nth-child(4n)').css({
-                animation: 'blue 1s 1.5s linear infinite alternate',
-            });
+            animationCss(1, 0.5);
             break;
         case '2':
-            $('.light:nth-child(4n + 1)').css({
-                animation: 'green 2s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 2)').css({
-                animation: 'yellow 2s 1s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 3)').css({
-                animation: 'red 2s 2s linear infinite alternate',
-            });
-            $('.light:nth-child(4n)').css({
-                animation: 'blue 2s 3s linear infinite alternate',
-            });
+            animationCss(2, 1);
             break;
         case '3':
-            $('.light:nth-child(4n + 1)').css({
-                animation: 'green 3s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 2)').css({
-                animation: 'yellow 3s 1.5s linear infinite alternate',
-            });
-            $('.light:nth-child(4n + 3)').css({
-                animation: 'red 3s 3s linear infinite alternate',
-            });
-            $('.light:nth-child(4n)').css({
-                animation: 'blue 3s 4.5s linear infinite alternate',
-            });
+            animationCss(3, 1.5);
             break;
     }
+}
+
+function animationCss(time, delay) {
+    $('.light:nth-child(4n + 1)').css({
+        animation: 'green '+ time +'s '+ delay * 0 +'s linear infinite alternate',
+    });
+    $('.light:nth-child(4n + 2)').css({
+        animation: 'yellow '+ time +'s '+ delay * 1 +'s linear infinite alternate',
+    });
+    $('.light:nth-child(4n + 3)').css({
+        animation: 'red '+ time +'s '+ delay * 2 +'s linear infinite alternate',
+    });
+    $('.light:nth-child(4n)').css({
+        animation: 'blue '+ time +'s '+ delay * 3+'s linear infinite alternate',
+    });
 }
 
 function toggleLights() {
@@ -72,7 +54,7 @@ function toggleLights() {
     } else {
         isOn = true;
         $('#container').empty();
-        addLights(screen);
+        addLights();
         $('#lightSwitch').html('Turn off');
     }
 }
@@ -81,4 +63,4 @@ $('#changeTime').click(function () {
     changeAnimation($('#time').val());
 });
 
-addLights(screen);
+addLights();
