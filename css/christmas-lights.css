@@ -1,0 +1,81 @@
+@keyframes red {
+    from {
+        box-shadow: 1px 1px 15px #cb152b, -1px -1px 15px #cb152b;
+    }
+    to {
+        box-shadow: none;
+        opacity: 0.2;
+    }
+}
+
+@keyframes blue {
+    from {
+        box-shadow: 1px 1px 15px #3b62e3, -1px -1px 15px #3b62e3;
+    }
+    to {
+        box-shadow: none;
+        opacity: 0.2;
+    }
+}
+
+@keyframes green {
+    from {
+        box-shadow: 1px 1px 15px #3ea369, -1px -1px 15px #3ea369;
+    }
+    to {
+        box-shadow: none;
+        opacity: 0.2;
+    }
+}
+
+@keyframes yellow {
+    from {
+        box-shadow: 1px 1px 15px #e08700, -1px -1px 15px #e08700;
+    }
+    to {
+        box-shadow: none;
+        opacity: 0.2;
+    }
+}
+
+body {
+    background-color: black;
+}
+
+#container {
+    text-align: center;
+}
+
+.light {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border-radius: 100% 4px;
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+
+.light:nth-child(4n + 1) {
+    background: #3ea369;
+    box-shadow: 1px 1px 15px #3ea369, -1px -1px 15px #3ea369;
+    animation: green 1s linear infinite alternate;
+}
+
+.light:nth-child(4n + 2) {
+    background: #e08700;
+    box-shadow: 1px 1px 15px #e08700, -1px -1px 15px #e08700;
+    animation: yellow 1s 0.5s linear infinite alternate;
+}
+
+.light:nth-child(4n + 3) {
+    background: #cb152b;
+    box-shadow: 1px 1px 15px #cb152b, -1px -1px 15px #cb152b;
+    animation: red 1s 1s linear infinite alternate;
+}
+
+.light:nth-child(4n) {
+    background: #3b62e3;
+    box-shadow: 1px 1px 15px #3b62e3, -1px -1px 15px #3b62e3;
+    animation: blue 1s 1.5s linear infinite alternate;
+}

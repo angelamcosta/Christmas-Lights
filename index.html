@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+    <link href='css/christmas-lights.css' rel='stylesheet'>
+    <title>Christmas Lights</title>
+</head>
+
+<body>
+    <div id='container' class='container'>
+    </div>
+    <div class='container my-5'>
+        <div class='row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border bg-light shadow-lg'>
+            <div class='col-lg-7 p-3 p-lg-5 pt-lg-3'>
+                <h1 class='display-4 fw-bold lh-1'>Christmas Lights</h1>
+                <p class='lead'>Christmas Lights is an application created to solve the <a class='text-dark' href='https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Christmas-Lights-App.md' target='_blank' rel='noopener'>Christmas Lights</a> challenge proposed by the <a class='text-dark' href='https://github.com/florinpop17/app-ideas' target='_blank' rel='noopener'>App Ideas Collection</a> repository. The application simulates the effect of a string of rippling lights, similar to the ones displayed during the Christmas Holidays.</p>
+                <label class='form-label' for='time'>Change the speed:</label> <br>
+                <select class='form-select' name='time' id='time' style='width:auto;'>
+                    <option selected='selected' value='1'>1s</option>
+                    <option value='2'>2s</option>
+                    <option value='3'>3s</option>
+                </select>
+                <div class='btn-group mt-3' role='group'>
+                    <button id='changeTime' type='button' class='btn btn-primary px-4 me-md-2 fw-bold'>Change</button>
+                    <button id='lightSwitch' type='button' class='btn btn-outline-secondary px-4'
+                        onclick='toggleLights();'>Turn off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'>
+    </script>
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js'
+        integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script>
+    <script src='js/christmas-light.js'></script>
+</body>
+
+</html>
